@@ -23,8 +23,8 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="inner_form">
+        <form onSubmit={this.handleSubmit} className="form">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -39,13 +39,15 @@ class ContactForm extends Component {
           <input
             type="tel"
             name="number"
-            // pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
-            // title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
-            // required
+            pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
+            title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
+            required
             value={this.state.number}
             onChange={this.handleInputChange}
           />
-          <button type="submit">Add contact</button>
+          <button className="btn_form" type="submit">
+            Add contact
+          </button>
         </form>
       </div>
     );
